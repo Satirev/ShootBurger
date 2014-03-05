@@ -1,0 +1,23 @@
+Server use 3 external libraries:
+ - 1. websocket++ (header only library) + boost.asio
+ - 2. libboost_system.so
+ - 3. libjsoncpp.so 
+
+Server as well as websocket++ is strongly based on C++11, so entire project requires compiler (g++) in version 4.8.1 or higher.
+
+BUILD:
+
+In order to compile Server, first compile libjsconcpp library:
+	
+	scons platform=linux-gcc
+ 
+After successfully build, copy libjson.so from jsoncpp-src-0.5.0/libs/ to directory CWD(current working directory)/libs
+
+Next compile/download precompiled boost libraries.
+
+Finally compile server:
+
+	make -j(input number of threads) 
+
+Tips
+Use flag --disable-web-security in google chrome to turn on textures
